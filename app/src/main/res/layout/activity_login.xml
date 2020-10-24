@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".LoginActivity">
+    tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <include
             android:id="@+id/include"
@@ -24,12 +24,12 @@
             android:id="@+id/include2"
             layout="@layout/login_body"
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="450dp"
             android:layout_margin="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:layout_editor_absoluteX="9dp" />
+            app:layout_constraintVertical_bias="0.694"
+            tools:layout_editor_absoluteX="5dp" />
 
         <ImageView
             android:id="@+id/imageView"

@@ -1,57 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".ui.LoginActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="410dp"
-        android:layout_height="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:menu="@menu/toolbar_main"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:title="MyWallet"
+        app:titleTextColor="@color/colorWhite" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:id="@+id/fragmentDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_login_buton"
+            tools:layout_editor_absoluteY="115dp" />
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/login_top" />
+
+        <FrameLayout
+            android:id="@+id/fragmentMenu"
+            android:layout_width="match_parent"
+            android:layout_height="560dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp" >
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            app:title="@string/app_name"
-            app:titleTextColor="@color/colorWhite" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.079"
+            tools:layout_editor_absoluteX="-16dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            <LinearLayout
+                android:id="@+id/lLinear_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_home"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Home"
-            android:textAlignment="center"
-            app:icon="@drawable/ic_baseline_home_24" />
+                <include
+                    android:id="@+id/linha_home"
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_entradas"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Entradas"
-            android:textAlignment="center"
-            app:icon="@drawable/ic_baseline_login_24" />
+                    layout="@layout/layout_linha" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_saidas"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Saídas"
-            android:textAlignment="center"
-            app:icon="@drawable/ic_baseline_attach_money_24" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_home"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:pointerIcon="arrow"
+                    android:text="Home"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.102"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.093" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lLinear_entrada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <include
+                    android:id="@+id/linha_entrada"
+
+                    layout="@layout/layout_linha" />
+
+                <Button
+                    android:id="@+id/btn_entrada"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Entrada"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.093" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLinear_saida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/linha_saida"
+
+                    layout="@layout/layout_linha" />
+
+                <Button
+                    android:id="@+id/btn_saida"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Gastos"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.88"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.093" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
