@@ -75,7 +75,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/round_login_buton"
         android:text="@string/btn_cadastrar"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/white"
         android:textSize="20dp" />
 
 

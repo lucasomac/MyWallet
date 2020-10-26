@@ -15,7 +15,7 @@
         app:menu="@menu/toolbar_main"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
         app:title="MyWallet"
-        app:titleTextColor="@color/colorWhite" />
+        app:titleTextColor="@color/white" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,10 +40,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:layout_editor_absoluteX="0dp" >
-
-        </FrameLayout>
-
+            tools:layout_editor_absoluteX="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +54,8 @@
             <LinearLayout
                 android:id="@+id/lLinear_home"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <include
@@ -65,15 +63,16 @@
 
                     layout="@layout/layout_linha" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_home"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:pointerIcon="arrow"
-                    android:text="Home"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="18sp"
+                    android:text="@string/home"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:icon="@drawable/ic_baseline_home_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.102"
@@ -88,23 +87,24 @@
             <LinearLayout
                 android:id="@+id/lLinear_entrada"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
-
 
                 <include
                     android:id="@+id/linha_entrada"
 
                     layout="@layout/layout_linha" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_entrada"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entrada"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="18sp"
+                    android:text="@string/entrada"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:icon="@drawable/ic_baseline_login_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -119,21 +119,22 @@
                 android:id="@+id/lLinear_saida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <include
                     android:id="@+id/linha_saida"
-
                     layout="@layout/layout_linha" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_saida"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gastos"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="18sp"
+                    android:text="@string/saida"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:icon="@drawable/ic_baseline_attach_money_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.88"
@@ -141,10 +142,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.093" />
             </LinearLayout>
-
         </LinearLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </LinearLayout>

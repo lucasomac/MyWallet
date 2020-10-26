@@ -19,7 +19,7 @@
             android:background="@color/colorAccent"
             app:popupTheme="@menu/toolbar"
             app:title="CADASTRAR"
-            app:titleTextColor="@color/colorWhite" />
+            app:titleTextColor="@color/white" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/home"

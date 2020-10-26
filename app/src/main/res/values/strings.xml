@@ -21,4 +21,6 @@
     <string name="edtUsername">Nome do usuário</string>
     <string name="edtEmail">Email</string>
     <string name="edtConfirmaSenha">Confirmação de senha</string>
+    <string name="gastos">Gastos</string>
+    <string name="saida">Saída</string>
 </resources>

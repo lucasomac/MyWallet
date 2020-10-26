@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.lucolimac.mywallet.R
-import br.com.lucolimac.mywallet.`interface`.ContractDetail
+import br.com.lucolimac.mywallet.interfaces.ContractDetail
 import kotlinx.android.synthetic.main.fragment_detail.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="@drawable/linha"
-    android:backgroundTint="@color/colorWhite"
+    android:backgroundTint="@color/white"
     android:gravity="center"
     android:orientation="vertical">
 

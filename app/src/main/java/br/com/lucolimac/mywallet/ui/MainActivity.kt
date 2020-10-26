@@ -2,11 +2,11 @@ package br.com.lucolimac.mywallet.ui
 
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import br.com.lucolimac.mywallet.R
-import br.com.lucolimac.mywallet.`interface`.ContractDetail
+import br.com.lucolimac.mywallet.interfaces.ContractDetail
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ContractDetail {
@@ -22,48 +22,40 @@ class MainActivity : AppCompatActivity(), ContractDetail {
         val fragEntrada = EntradaFragment.newInstance()
 
         trocaCorHome(R.color.colordetail)
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.fragmentMenu, fragHome)
-            commit()
-        }
+        inflateFragment(fragHome)
 
         btn_home.setOnClickListener {
-            trocaCorEntradas(R.color.colorWhite)
-            trocaCorGastos(R.color.colorWhite)
+            trocaCorEntradas(R.color.white)
+            trocaCorGastos(R.color.white)
             trocaCorHome(R.color.colordetail)
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentMenu, fragHome)
-                addToBackStack(null)
-                commit()
-            }
+            inflateFragment(fragHome)
         }
 
         btn_saida.setOnClickListener {
-            trocaCorEntradas(R.color.colorWhite)
+            trocaCorEntradas(R.color.white)
             trocaCorGastos(R.color.colordetail)
-            trocaCorHome(R.color.colorWhite)
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentMenu, fragSaida)
-                addToBackStack(null)
-                commit()
-            }
+            trocaCorHome(R.color.white)
+            inflateFragment(fragSaida)
         }
 
         btn_entrada.setOnClickListener {
             trocaCorEntradas(R.color.colordetail)
-            trocaCorGastos(R.color.colorWhite)
-            trocaCorHome(R.color.colorWhite)
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragmentMenu, fragEntrada)
-//                addToBackStack(null)
-                commit()
-            }
+            trocaCorGastos(R.color.white)
+            trocaCorHome(R.color.white)
+            inflateFragment(fragEntrada)
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_main, menu)
-        return true
+    //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.toolbar_main, menu)
+//        return true
+//    }
+    fun inflateFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentMenu, fragment)
+//                addToBackStack(null)
+            commit()
+        }
     }
 
     fun trocaCorGastos(color: Int) {
